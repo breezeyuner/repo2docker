@@ -10,14 +10,14 @@ import sys
 import xml.etree.ElementTree as ET
 
 TEMPLATE = r"""
-FROM buildpack-deps:bionic
+FROM nvidia/cuda:9.0-cudnn7-runtime-ubuntu16.04
 
 # avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set up locales properly
 RUN apt-get update -qq && \
-    apt-get install -qq --yes --no-install-recommends locales && \
+    apt-get install -qq --yes --no-install-recommends locales wget bzip2 && \
     apt-get purge -qq && \
     apt-get clean -qq && \
     rm -rf /var/lib/apt/lists/*
