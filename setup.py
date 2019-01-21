@@ -9,7 +9,7 @@ else:
         readme = f.read()
 
 setup(
-    name='jupyter-repo2docker',
+    name='aicrowd-repo2docker',
     version=versioneer.get_version(),
     install_requires=[
         'docker',
@@ -49,8 +49,7 @@ setup(
     cmdclass=versioneer.get_cmdclass(),
     entry_points={
         'console_scripts': [
-            'jupyter-repo2docker = repo2docker.__main__:main',
-            'repo2docker = repo2docker.__main__:main',
+            'aicrowd-repo2docker = repo2docker.__main__:main',
         ]
     },
 )
